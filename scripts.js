@@ -16,7 +16,58 @@ function ready() {
     var inputFirstInteger = parseInt(inputFirstChar, 10);
     var inputSecondInteger = parseInt(inputSecondChar, 10);
     var inputThirdInteger = parseInt(inputThirdChar, 10);
-    var outputValue = 0;
+
+    var one = 'I';
+    var five = 'V';
+    var ten = 'X';
+    var fifty = 'L'
+    var hundred = 'C';
+    var fiveHundred = 'D';
+    var oneThousand = 'M';
+
+    var outputRomanNumerals = [];
+    var outputValue = '';
+
+    function convertHundredsInteger (hundredsValue) {
+      var hundredsMultiple = '';
+      if(hundredsValue <= 3) {
+        hundredsMultiple = hundred.repeat(hundredsValue);
+        console.log(hundredsMultiple);
+        outputRomanNumerals.push(hundredsMultiple);
+        console.log(outputRomanNumerals);
+      }else if(hundredsValue == 4) {
+        hundredsMultiple = 'CD';
+        outputRomanNumerals.push(hundredsMultiple);
+        console.log(outputRomanNumerals);
+      }else if (hundredsValue == 5) {
+        hundredsMultiple = 'D';
+        outputRomanNumerals.push(hundredsMultiple);
+        console.log(outputRomanNumerals);
+      }else if (hundredsValue <= 8) {
+        hundredsMultiple = 'D' + hundred.repeat(hundredsValue-5);
+        outputRomanNumerals.push(hundredsMultiple);
+        console.log(outputRomanNumerals);
+      }else{
+        hundredsMultiple = 'CM';
+        outputRomanNumerals.push(hundredsMultiple);
+        console.log(outputRomanNumerals);
+      }
+    }
+    convertHundredsInteger(inputFirstInteger);
+
+    function convertTensInteger (tensValue) {
+
+    }
+
+    function convertOnesInteger (onesValue) {
+
+    }
+
+    function convertEntireValue () {
+      outputValue = convertHundredsInteger(inputFirstInteger) +
+        convertTensInteger (inputSecondInteger) +
+        convertOnesInteger (inputThirdInteger);
+    }
 
     console.log(inputFirstInteger);
     console.log(inputSecondInteger);
