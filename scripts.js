@@ -9,9 +9,19 @@ function ready() {
   console.log(form);
   form.onsubmit = submit;
   function submit(){
-    outputValue = input.value;
-    console.log(outputValue);
-    output.innerHTML = outputValue;
+    var inputValue = input.value;
+    var inputFirstChar = inputValue.toString()[0];
+    var inputSecondChar = inputValue.toString()[1];
+    var inputThirdChar = inputValue.toString()[2];
+    var inputFirstInteger = parseInt(inputFirstChar, 10);
+    var inputSecondInteger = parseInt(inputSecondChar, 10);
+    var inputThirdInteger = parseInt(inputThirdChar, 10);
+    var outputValue = 0;
+
+    console.log(inputFirstInteger);
+    console.log(inputSecondInteger);
+    console.log(inputThirdInteger);
+    output.innerHTML = inputFirstChar + inputSecondChar + inputThirdChar;
     event.preventDefault();
     form.reset();
   }
